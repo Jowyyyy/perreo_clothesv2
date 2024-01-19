@@ -1,13 +1,13 @@
 import React from "react";
+
 interface NavBarProps {
     totalQuantity: number;
-    cartItems: any[]; // O ajusta el tipo de cartItems según la estructura real de tus datos
+    cartItems: any[];
   }
   
   const NavBar: React.FC<NavBarProps> = ({  }) => {
     return (
       <div className="navbar">
-        {/* <Searchbar /> */}
         <div className="row">
           <ul>
             <li>
@@ -29,6 +29,7 @@ interface NavBarProps {
               <a href="/contact">CONTACT</a>
             </li>
           </ul>
+          
         </div>
       </div>
     );

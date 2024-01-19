@@ -1,9 +1,11 @@
 
+/* NAVBAR */
+
   .navbar {
     display: flex;
     align-items: center;
-    background: rgb(245, 245, 245);
-    color: black;
+    background: rgb(72, 69, 69);
+    
     font-family: Helvetica;
     font-weight: 30;
     height: 60px;
@@ -14,13 +16,6 @@
     margin-bottom: 470px;
     border-radius: 15px;
   }
-  /* .linea {
-    border-top: 1px solid black;
-    height: 2px;
-    padding: 0;
-    margin-top: 100px;
-    margin-bottom:100px;
-  } */
   .navbar ul li {
     display: inline;
     padding-left: 30px;
@@ -32,29 +27,58 @@
   }
   
   .navbar ul li a:hover {
-    color: grey;
+    color: rgb(255, 255, 255);
   } 
 
+  /* SEARCHBAR */
+
   .searchbar-container {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
+  margin-inline-start: 1150px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.searchbar-container input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 200px; /* Ancho del input */
+}
+
+.searchbar-container button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #d3dae1;
+  border-radius: 8px;
+  background-color: rgb(72, 69, 69);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* BODY + PARRAF */
+
   body {
-    background-color:rgba(90, 88, 88, 0.93);
-    margin: 0;
+    background-image: url('src/assets/fondo.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-attachment: fixed; /* Fija la imagen al fondo, para que no se desplace con el contenido */
     overflow-x: hidden !important;
     font-family: "Poppins", sans-serif;
   }
+  h1 {
+    margin-left: 70px;
+  }
   
-  a {
+  /* a {
     text-decoration: none !important;
     min-width: fit-content;
     width: fit-content;
     width: -webkit-fit-content;
     width: -moz-fit-content;
   }
-  
+   */
   a,
   button {
     transition: 0.5s;
@@ -64,11 +88,13 @@
   p {
     font-size: 14px;
   }
+
+  /* TITULO */
   
   .titulo {
     font-family:fantasy;
     font-size: 70px;
-    color: rgb(90, 200, 6);
+    color: black;
     align-items: center;
     margin-left: 555px;
     margin-right: 400px;
@@ -76,111 +102,189 @@
     margin-bottom: 10px;
   }
 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--primary);
-    font-weight: 600;
+
+  /* PRODUCTOS */
+  
+  h1 {
+    font-family:fantasy;
+    color: black;
+  }
+
+  .slider-container {
+    position: relative;
+  }
+
+  .productos-container {
+    display: flex;
+    overflow-x: scroll;
+    gap: 2%; /* Ajusta el espacio entre productos según sea necesario */
+    padding: 2%; /* Ajusta el padding según sea necesario */
+    transition: scroll-left 0.5s ease-in-out;
+    box-sizing: border-box;
+    min-width: 400px; /* Ajusta el ancho mínimo según sea necesario */
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Ajusta el ancho según sea necesario */
+    height: 30px; /* Ajusta la altura según sea necesario */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto/icono */
+    font-size: 20px; /* Tamaño del texto/icono */
+    border: none;
+    cursor: pointer;
+    z-index: 2;
   }
   
-  a,
-  button,
-  input,
-  textarea,
-  select {
-    outline: none !important;
-  }
-  footer {
-    background-color: var(--primary);
-    color: var(--lite);
+  .left-arrow {
+    left: 10px; /* Ajusta la posición de la flecha izquierda */
   }
   
-  footer h3 {
-    color: var(--white);
-    margin-bottom: 1.5rem;
+  .right-arrow {
+    right: 10px; /* Ajusta la posición de la flecha derecha */
   }
   
-  footer a {
-    color: var(--lite);
-    display: block;
-    margin: 15px 0;
+  .spacer {
+    flex: 2 500 auto;
+    width: 2px; /* Ajusta el ancho según sea necesario */
   }
   
-  footer a:hover {
-    color: var(--white);
-  }
   
-  footer fieldset {
-    padding: 0;
-  }
-  
-  footer fieldset input {
-    border: 0;
-    padding: 1rem;
-  }
-  
-  footer fieldset .btn {
-    border-radius: 0;
-    border: 0;
-  }
-  
-  footer fieldset .btn_2:hover {
-    background-color: var(--secondary);
-    border: 0;
-    color: var(--primary);
-  }
-  
-  footer .flex:last-child {
-    align-items: center;
-  }
-  
-  footer .flex:last-child .flex-content:last-child {
-    text-align: right;
-  }
-  
-  footer .flex:last-child p {
-    color: var(--white);
-    float: left;
-  }
-  footer .flex:last-child .designby {
-    float: right;
-  }
-  
-  footer .flex:last-child a {
-    width: 40px;
-    display: inline-block;
-    background-color: #334f6c;
-    color: var(--white);
-    padding: 0.5rem;
-    margin-right: 3px;
+  .producto {
+    flex: 0 0 auto;
     text-align: center;
+    margin-left: 2%; /* Ajusta el margen izquierdo según sea necesario */
+    margin-right: 2%; /* Ajusta el margen derecho según sea necesario */
   }
   
-  footer .flex:last-child a:hover {
-    background-color: var(--secondary);
-    color: var(--gray);
+  .productos-container .producto:first-child {
+    margin-left: 0; /* Evita el margen izquierdo en el primer elemento */
   }
   
-  @media (max-width: 1100px) {
-    footer .flex:first-child {
-      flex-wrap: wrap;
-    }
-  
-    footer .flex:first-child .flex-content {
-      flex: 1 1 40%;
-    }
+  .productos-container .producto:last-child {
+    margin-right: 0; /* Evita el margen derecho en el último elemento */
   }
   
-  @media (max-width: 920px) {
-    footer .flex:last-child .flex-content:last-child {
-      text-align: left;
-    }
+ 
+  
+  .img-prod img {
+    width: 100%; /* Establece el ancho de las imágenes al 100% */
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Ajusta la imagen para que ocupe todo el espacio */
   }
   
-  @media (max-width: 320px) {
-    footer .flex:first-child .flex-content {
-      flex: 1 1 100%;
-    }
+  .textproducto {
+    margin-top: 10px;
+    font-size: 16px;
   }
+  
+  .precio {
+    font-size: 14px;
+  }
+  
+  .add-to-cart {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Botones de desplazamiento */
+  .scroll-right-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para el botón */
+  .add-to-cart {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para el precio */
+  .precio {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para el botón de scroll */
+  .scroll-right-button {
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  .slider-frame {
+    width: 600px;
+    height: 750px;
+    margin-left: 465px;
+    margin-right: 225px;
+    margin-top: -450px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slider-container::after {
+    background:#ccc;
+    content: ''; /* Pseudo-elemento para aplicar el desenfoque */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px; /* Ancho del área desenfocada (ajusta según sea necesario) */
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(0, 0, 0)); /* Fondo para el desenfoque */
+    filter: blur(10%); /* Valor del desenfoque (ajusta según sea necesario) */
+    z-index: 1;
+  }
+  
+  .slider-frame ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s linear infinite alternate;
+  }
+  
+  
+  .slider-frame li {
+    width: 100%;
+    list-style: none;
+  }
+  
+  .slider-frame img {
+    width: 100%;
+  }
+  
+  @keyframes slide {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+  }
+
+  /* FOTOS ENCABEZADO */
+
+/* .slider {
+
+}
+.slider img {
+
+} */

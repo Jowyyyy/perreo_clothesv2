@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import '../styles/Styles.css'
 
 const SearchBar: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
