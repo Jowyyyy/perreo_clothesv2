@@ -22,12 +22,11 @@ const Productos: React.FC = () => {
     }
   };
 
-
   return (
     <div>
       <h1>PRODUCTOS</h1>
       <div className="slider-container">
-  <div className="productos-container" ref={contentRef}>
+  <div className="productos-container" ref={contentRef}>  
   <button className="arrow left-arrow" onClick={scrollLeft}>&#9664;</button>
     {/* Contenido de los productos */}
     {/* ... (tus productos) ... */}
