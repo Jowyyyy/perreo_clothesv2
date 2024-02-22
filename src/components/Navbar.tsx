@@ -11,7 +11,7 @@ interface NavBarProps {
         <div className="row">
           <ul>
             <li>
-              <a href="/home">HOME</a>
+              <a href="/login">LOG IN</a>
             </li>
             <li>
               <a href="/ofertas">OFERTAS</a>
