@@ -1,59 +1,71 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { PathRouteProps, LayoutRouteProps, IndexRouteProps } from 'react-router'; 
-import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBIcon } from 'mdb-react-ui-kit';
+import React, { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../Config/FireBase-Config' // Asegúrate de tener este archivo configurado correctamente
 
-interface CustomRouteProps extends PathRouteProps, LayoutRouteProps, IndexRouteProps {
-  onLogin: any;
-}
+const Login: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginMessage, setLoginMessage] = useState<string>('');
 
-const App: React.FC<CustomRouteProps> = ({ onLogin }) => {
-  const handleLogin = () => {
-    // This is a mock function. Replace it with your actual login logic.
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+  
+    // Validar que se haya ingresado el correo y la contraseña
+    if (!email || !password) {
+      setLoginMessage('Por favor, ingresa el correo y la contraseña.');
+      return;
+    }
+  
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      setLoginMessage('¡Bienvenido a perreo clothes!');
+      // Aquí puedes redirigir al usuario a otra página o actualizar el estado global
+    } catch (error: any) {
+      // Manejar errores específicos
+      let errorMessage = '';
+  
+      if (error.code === 'auth/user-not-found') {
+        errorMessage = 'Usuario no encontrado. Verifica tu correo.';
+      } else if (error.code === 'auth/wrong-password') {
+        errorMessage = 'Contraseña incorrecta. Intenta de nuevo.';
+      } else {
+        errorMessage = 'Error al iniciar sesión. Por favor, inténtalo de nuevo.';
+      }
+  
+      setLoginMessage(errorMessage);
+    }
   };
 
+
   return (
-    <div className='login-container'>
-      <MDBContainer fluid>
-        <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-          <MDBCol col='12'>
-            <MDBCard className='bg-dark text-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '400px' }}>
-              <MDBCardBody className='p-5 d-flex flex-column align-items-center mx-auto w-100'>
-                <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-                <p className="text-white-50 mb-5">Please enter your login and password!</p>
-
-                <MDBInput wrapperClass='mb-4 mx-5 w-100' labelClass='text-white' label='Email address' id='formControlLg' type='email' size="lg"/>
-                <MDBInput wrapperClass='mb-4 mx-5 w-100' labelClass='text-white' label='Password' id='formControlLg' type='password' size="lg"/>
-
-                <p className="small mb-3 pb-lg-2"><a className="text-white-50" href="#!">Forgot password?</a></p>
-                <MDBBtn outline className='mx-2 px-5' color='white' size='lg' onClick={handleLogin}>
-                  Login
-                </MDBBtn> 
-
-                <div className='d-flex flex-row mt-3 mb-5'>
-                  <MDBBtn tag='a' color='none' className='m-3' style={{ color: 'white' }}>
-                    <MDBIcon fab icon='facebook-f' size="lg"/>
-                  </MDBBtn>
-
-                  <MDBBtn tag='a' color='none' className='m-3' style={{ color: 'white' }}>
-                    <MDBIcon fab icon='twitter' size="lg"/>
-                  </MDBBtn>
-
-                  <MDBBtn tag='a' color='none' className='m-3' style={{ color: 'white' }}>
-                    <MDBIcon fab icon='google' size="lg"/>
-                  </MDBBtn>
-                </div>
-                <Link to="/login">Login</Link>
-                <div>
-                  <p className="mb-0">Don't have an account? <a href="#!" className="text-white-50 fw-bold">Sign Up</a></p>
-                </div>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-    </div>
+    <div className="login-container">
+    <h1 className='titulo-login'>Iniciar Sesión</h1>
+    {loginMessage && <p className=''>{loginMessage}</p>}
+    <form onSubmit={handleLogin}>
+      <div className="input-group">
+        <label htmlFor="email">Correo:     </label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="input-group">
+        <label htmlFor="password">Contraseña:  </label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      <button className="custom-button" type="submit">
+          Iniciar Sesión
+        </button>
+    </form>
+  </div>
   );
 };
 
-export default App;
+export default Login;

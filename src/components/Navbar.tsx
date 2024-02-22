@@ -1,38 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-interface NavBarProps {
-    totalQuantity: number;
-    cartItems: any[];
-  }
-  
-  const NavBar: React.FC<NavBarProps> = ({  }) => {
-    return (
-      <div className="navbar">
-        <div className="row">
-          <ul>
-            <li>
-              <a href="/login">LOG IN</a>
-            </li>
-            <li>
-              <a href="/ofertas">OFERTAS</a>
-            </li>
-            <li>
-              <a href="/productos">PRODUCTOS</a>
-            </li>
-            <li>
-              <a href="/outfit">TUS OUTFITS</a>
-            </li>
-            <li>
-              <a href="/box">MISTERY BOX</a>
-            </li>
-            <li>
-              <a href="/contact">CONTACT</a>
-            </li>
-          </ul>
-          
-        </div>
+
+const NavBar: React.FC = () => {
+  return (
+    <div className="navbar">
+      <div className="row">
+        <ul>
+          <li><Link to="/login">LOG IN</Link></li>
+          <li><Link to="/signup">SIGN UP</Link></li>
+          <li><Link to="/ProductosPage">PRODUCTOS</Link></li>
+          <li><Link to="/GeneradorOutfits">TUS OUTFITS</Link></li>
+          <li><Link to="/box">MISTERY BOX</Link></li>
+        </ul>
       </div>
-    );
-  };
-  
-  export default NavBar;
+    </div>
+  );
+};
+
+export default NavBar;
