@@ -32,38 +32,38 @@ const Productos: React.FC = () => {
     {/* ... (tus productos) ... */}
     <div className="producto">
             <div className="img-prod">
-            <img src="src\assets\prod1.jpg" alt="prod1"/>
+            <img src="src\assets\prod1.jpg" alt="prod1" className="imgborder" />
             </div>
             <p className="textproducto">Camiseta Palm Angels</p>
           <div className="precio">
-            <p> $540.00 <small style={{ color: "red" }}>600.00</small></p>
+            <p> $600.00 <small style={{ color: "red" }}>540.00</small></p>
           </div>
           <button className="add-to-cart">Añadir a la cesta</button>
         </div>
         <div className="producto">
           <div className="img-prod">
-          <img src="src\assets\prod2.jpg" alt="prod2"/>
+          <img src="src\assets\prod2.jpg" alt="prod2"className="imgborder" />
           </div>
             <p className="textproducto">Nike dunk low</p>
           <div className="precio">
-            <p> $150.00 <small style={{ color: "red" }}>210.00</small></p>
+            <p> $210.00 <small style={{ color: "red" }}>150.00</small></p>
           </div>
           <button className="add-to-cart">Añadir a la cesta</button>
         </div>
         <div className="producto">
           <div className="img-prod">
-            <img src="src\assets\prod3.jpg" alt="prod3"/>
+            <img src="src\assets\prod3.jpg" alt="prod3"className="imgborder" />
           </div>
             <p className="textproducto">Jordan retro 4</p>
           <div className="precio">
-            <p> $660.00 <small style={{ color: "red" }}>750.00</small></p>
+            <p> $750.00 <small style={{ color: "red" }}>660.00</small></p>
           </div>
           <button className="add-to-cart">Añadir a la cesta</button>
         </div>
         {/* Agrega más productos similares */}
         <div className="producto">
             <div className="img-prod">
-            <img src="src\assets\prod4.jpg" alt="prod1"/>
+            <img src="src\assets\prod4.jpg" alt="prod1"className="imgborder" />
             </div>
             <p className="textproducto">Camiseta Ferxxoo</p>
           <div className="precio">
@@ -73,7 +73,7 @@ const Productos: React.FC = () => {
         </div>
         <div className="producto">
             <div className="img-prod">
-            <img src="src\assets\prod6.jpg" alt="prod1"/>
+            <img src="src\assets\prod6.jpg" alt="prod1"className="imgborder" />
             </div>
             <p className="textproducto">Air Jordan 1 High OG</p>
           <div className="precio">
@@ -83,7 +83,7 @@ const Productos: React.FC = () => {
         </div>
         <div className="producto">
             <div className="img-prod">
-            <img src="src\assets\prod7.jpg" alt="prod1"/>
+            <img src="src\assets\prod7.jpg" alt="prod1"className="imgborder" />
             </div>
             <p className="textproducto">Sudadera NSLQVAPM</p>
           <div className="precio">
@@ -93,7 +93,7 @@ const Productos: React.FC = () => {
         </div>
         <div className="producto">
             <div className="img-prod">
-            <img src="src\assets\prod8.jpg" alt="prod1"/>
+            <img src="src\assets\prod8.jpg" alt="prod1"className="imgborder" />
             </div>
             <p className="textproducto">Sudadera Gucci x NorthFace</p>
           <div className="precio">
@@ -103,7 +103,7 @@ const Productos: React.FC = () => {
         </div>
         <div className="producto">
             <div className="img-prod">
-            <img src="src\assets\prod9.jpg" alt="prod1"/>
+            <img src="src\assets\prod9.jpg" alt="prod1"className="imgborder" />
             </div>
             <p className="textproducto">Camiseta Travis Scott</p>
           <div className="precio">
@@ -113,7 +113,7 @@ const Productos: React.FC = () => {
         </div>
         <div className="producto">
             <div className="img-prod">
-            <img src="src\assets\prod10.jpg" alt="prod1"/>
+            <img src="src\assets\prod10.jpg" alt="prod1"className="imgborder" />
             </div>
             <p className="textproducto">New Balance 550</p>
           <div className="precio">

@@ -22,12 +22,12 @@
   }
   
   .navbar ul li a {
-    color: rgb(0, 0, 0);
+    color: rgb(248, 245, 245);
     text-decoration: none;
   }
   
   .navbar ul li a:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(208, 208, 208);
   } 
 
   /* SEARCHBAR */
@@ -465,7 +465,7 @@ a {
 }
 .titulo-login{
   color: #ccc;
-  margin-left: 60px;
+  margin-left: -10px;
   
 }
 .form {
@@ -474,22 +474,57 @@ a {
 
 .input-group {
   margin-bottom: 15px;
-  margin-left: 60px;
+  margin-left: 30px;
 }
 
 .custom-button {
   margin-top: 15px;
-  margin-left: 115px;
+  margin-left: 75px;
   /* Agrega otros estilos personalizados según tus necesidades */
 }
 .mensage-error{
   margin-left: 50px;
   color: red;
 }
+
+/* SIGN IN */
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; /* 100% del viewport height, para centrar en la pantalla */
+  background-color: rgba(0, 0, 0, 0.8); /* Color de fondo con opacidad */
+  padding: 20px;
+  border-radius: 10px;
+}
+.titulo-signin{
+  color: #ccc;
+  margin-left: -10px;
+  
+}
+.form2 {
+  margin-left: 100px;
+}
+
+.input-group2 {
+  margin-bottom: 15px;
+  margin-left: -50px;
+}
+
+.custom-button2 {
+  margin-top: 15px;
+  margin-left: 5px;
+  /* Agrega otros estilos personalizados según tus necesidades */
+}
+.mensage-error2{
+  margin-left: 50px;
+}
 /* GENERADOR OUTFITS */
 .generador-outfits-container {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
+  
 }
 
 .generador-outfits-container label,
@@ -531,4 +566,19 @@ a {
 .outfit-image-container:hover .outfit-description {
   opacity: 1;
   margin-top: -10px;
+}
+.imgborder {
+  border-radius: 15px;
+}
+.boton-generador{
+  margin-left: 25px;
+}
+.etiqueta1{
+  margin-left: 25px;
+}
+.etiqueta2{
+  margin-left: 27px;
+}
+.etiqueta3{
+  margin-left: 29px;
 }
