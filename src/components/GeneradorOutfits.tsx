@@ -165,7 +165,7 @@ interface OutfitsData {
   
     return (
       <div className='generador-outfits-container'>
-        <label>Talla:</label>
+        <label className='etiqueta1'>Talla:</label>
         <select value={talla} onChange={(e) => setTalla(e.target.value)}>
           <option value="s">S</option>
           <option value="m">M</option>
@@ -173,13 +173,13 @@ interface OutfitsData {
           <option value="xl">XL</option>
         </select>
   
-        <label>Estilo:</label>
+        <label className='etiqueta2'>Estilo:</label>
         <select value={estilo} onChange={(e) => setEstilo(e.target.value)}>
           <option value="casual">Casual</option>
           <option value="elegante">Elegante</option>
         </select>
   
-        <label>Estación del año:</label>
+        <label className='etiqueta3'>Estación del año:</label>
         <select value={estacion} onChange={(e) => setEstacion(e.target.value)}>
           <option value="verano">Verano</option>
           <option value="otoño">Otoño</option>
@@ -187,7 +187,7 @@ interface OutfitsData {
           <option value="invierno">Invierno</option>
         </select>
   
-        <button onClick={handleClickGenerar}>Generar Outfit</button>
+        <button className='boton-generador' onClick={handleClickGenerar}>Generar Outfit</button>
   
         {outfitGenerado && (
         <div>

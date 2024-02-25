@@ -3,7 +3,7 @@ import '../styles/Styles.css'
 import Searchbar from './Searchbar';
 import NavBar from './Navbar';
 import ProductEncab from './ProductEncab';
-import Login from './Login';
+import Login from './login'
 import Productos from './Productos';
 import Footer from './Footer';
 import ProductosPage from './ProductosPage';
@@ -13,7 +13,11 @@ const HomePage = () => {
   
   return (
     <Router>
-
+       <Routes>
+          {/* Ruta para el componente Login */}
+          <Route path="Login" element={<Login />} />
+          <Route path="SIGNUP" element={<Signup />} />
+        </Routes>
         <Searchbar />
         <NavBar />
 
@@ -21,10 +25,7 @@ const HomePage = () => {
         <ProductEncab />
         <Productos />
         <Routes>
-          {/* Ruta para el componente Login */}
-          <Route path="Login" element={<Login />} />
-          <Route path="SIGNUP" element={<Signup />} />
-          <Route path="ProductosPage/" element={<ProductosPage />} />
+          <Route path="ProductosPage" element={<ProductosPage />} />
           <Route path="GeneradorOutfits" element={<GeneradorOutfits />} />
         </Routes>
 

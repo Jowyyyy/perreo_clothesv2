@@ -22,7 +22,7 @@ const Register: React.FC = () => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      setMessage('Registro exitoso.');
+      setMessage('Has sido registrado en perreo clothes!! .');
       // Aquí puedes realizar acciones después del registro, como redirigir o actualizar el estado global
     } catch (error: any) {
       setMessage(error.message);
@@ -30,12 +30,12 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="login-container">
-    <h1 className='titulo-login'>Registrate</h1>
-    {message && <p className='mensage-error'>{message}</p>}
-    <form onSubmit={handleLogin} className="form">
-      <div className="input-group">
-        <label htmlFor="email">Correo Electrónico:</label>
+    <div className="signin-container">
+    <h1 className='titulo-signin'>Registrate</h1>
+    {message && <p className='mensage-error2'>{message}</p>}
+    <form onSubmit={handleLogin} className="form2">
+      <div className="input-group2">
+        <label htmlFor="email">Correo  :</label>
         <input
           type="email"
           id="email"
@@ -43,7 +43,7 @@ const Register: React.FC = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <div className="input-group">
+      <div className="input-group2">
         <label htmlFor="password">Contraseña:</label>
         <input
           type="password"
@@ -52,7 +52,7 @@ const Register: React.FC = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button type="button" onClick={handleSignUp} className="custom-button">Registrarse</button>
+      <button type="button" onClick={handleSignUp} className="custom-button2">Registrarse</button>
     </form>
   </div>
 );
